@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoodVersleutelen", "RoodVersleutelen\RoodVersleutelen.csproj", "{4D915C38-49FF-4F1A-918A-0467BB6EBE16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D915C38-49FF-4F1A-918A-0467BB6EBE16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D915C38-49FF-4F1A-918A-0467BB6EBE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D915C38-49FF-4F1A-918A-0467BB6EBE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D915C38-49FF-4F1A-918A-0467BB6EBE16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F71BB47F-68B5-40CF-97B2-14E07AE253D7}
+	EndGlobalSection
+EndGlobal
