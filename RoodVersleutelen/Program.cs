@@ -6,16 +6,12 @@ namespace RoodVersleutelen
 {
     class Program
     {
-
         public class Options
         {
-            [Option('v', "verbose", Required = false, HelpText = "Set output to verbose messages.")]
-            public bool Verbose { get; set; }
-
-            [Option('i', "input", Required = false, HelpText = "Input file to be encrypted or decrypted.")]
+            [Option('i', "input", Required = true, HelpText = "Input file to be encrypted or decrypted.")]
             public string Input { get; set; }
 
-            [Option('o', "output", Required = false, HelpText = "Output file.")]
+            [Option('o', "output", Required = true, HelpText = "Output file.")]
             public string Output { get; set; }
 
             [Option('e', "encrypt", Required = false, HelpText = "Encrypt input file.")]
@@ -24,7 +20,6 @@ namespace RoodVersleutelen
             [Option('d', "decrypt", Required = false, HelpText = "Decrypt input file.")]
             public bool Decrypt { get; set; }
         }
-
 
         static void Main(string[] args)
         {
