@@ -2,6 +2,11 @@
 using CommandLine;
 using System.Security.Cryptography;
 
+
+// dependency: CommandLineParser (2.3.0)
+// https://github.com/commandlineparser/commandline
+
+
 namespace RoodVersleutelen
 {
     class Program
