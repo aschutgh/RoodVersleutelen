@@ -1,11 +1,15 @@
 ﻿using System;
 using CommandLine;
 using System.Security.Cryptography;
+using System.Text;
 
 
 // dependency: CommandLineParser (2.3.0)
 // https://github.com/commandlineparser/commandline
 
+
+//string input = "some text";
+//byte[] array = Encoding.ASCII.GetBytes(input);
 
 namespace RoodVersleutelen
 {
@@ -52,21 +56,6 @@ namespace RoodVersleutelen
                     Console.WriteLine("Dit bestand gaan we ontsleutelen {0}", o.Output);
                 }
             });
-
-            //Parser.Default.ParseArguments<Options>(args)
-            //       .WithParsed<Options>(o =>
-            //       {
-            //           if (o.Verbose)
-            //           {
-            //               Console.WriteLine($"Verbose output enabled. Current Arguments: -v {o.Verbose}");
-            //               Console.WriteLine("Quick Start Example! App is in Verbose mode!");
-            //           }
-            //           else
-            //           {
-            //               Console.WriteLine($"Current Arguments: -v {o.Verbose}");
-            //               Console.WriteLine("Quick Start Example!");
-            //           }
-            //       });
         }
     }
 }
