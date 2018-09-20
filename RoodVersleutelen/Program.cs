@@ -202,7 +202,9 @@ namespace RoodVersleutelen
             string password;
             Console.Write("Enter password: ");
             password = Console.ReadLine();
+            Debug.WriteLine(password);
             return password;
+            
 
 
 

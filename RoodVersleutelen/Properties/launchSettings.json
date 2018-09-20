@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "RoodVersleutelen": {
+      "commandName": "Project",
+      "commandLineArgs": "-d -i hoi.txt.aes -o hoi.txt.plaintext"
+    }
+  }
+}
