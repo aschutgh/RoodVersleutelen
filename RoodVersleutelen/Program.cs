@@ -22,6 +22,7 @@ using System.Diagnostics;
 
 // usage (to encrypt): dotnet RoodVersleutelen.dll -e -i filetoencrypt
 // usage (to decrypt): dotnet RoodVersleutelen.dll -d -i filetodecrypt -o filetodecrypt.plaintext
+// use a password up to eight characters in length
 
 namespace RoodVersleutelen
 {
