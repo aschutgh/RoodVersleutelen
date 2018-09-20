@@ -33,7 +33,7 @@ namespace RoodVersleutelen
 
     class Program
     {
-
+        // sourse: https://ourcodeworld.com/articles/read/471/how-to-encrypt-and-decrypt-files-using-the-aes-encryption-algorithm-in-c-sharp
         //  Call this function to remove the key from memory after use for security
         [DllImport("KERNEL32.DLL", EntryPoint = "RtlZeroMemory")]
         public static extern bool ZeroMemory(IntPtr Destination, int Length);
@@ -185,6 +185,8 @@ namespace RoodVersleutelen
                 fsCrypt.Close();
             }
         }
+        // ==========================================================================
+
 
         static void Main(string[] args)
         {
