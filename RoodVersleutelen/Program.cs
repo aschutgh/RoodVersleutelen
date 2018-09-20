@@ -1,9 +1,14 @@
 ﻿using System;
 using CommandLine;
+using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.ComponentModel;
+using System.Diagnostics;
+
+
 
 
 
@@ -21,7 +26,7 @@ namespace RoodVersleutelen
         [Option('i', "input", Required = true, HelpText = "Input file to be encrypted or decrypted.")]
         public string Input { get; set; }
 
-        [Option('o', "output", Required = true, HelpText = "Output file.")]
+        [Option('o', "output", Required = false, HelpText = "Output file.")]
         public string Output { get; set; }
 
         [Option('e', "encrypt", Required = false, HelpText = "Encrypt input file.")]
@@ -187,9 +192,43 @@ namespace RoodVersleutelen
         }
         // ==========================================================================
 
+        static string AskPassword()
+        {
+            string password;
+            Console.Write("Enter password: ");
+            password = Console.ReadLine();
+            return password;
+
+
+
+            //SecureString securePwd = new SecureString();
+            //ConsoleKeyInfo key;
+
+            //Console.Write("Enter password: ");
+            //do
+            //{
+            //    key = Console.ReadKey(true);
+
+            //    // Ignore any key out of range.
+            //    if (((int)key.Key) >= 65 && ((int)key.Key <= 90))
+            //    {
+            //        // Append the character to the password.
+            //        securePwd.AppendChar(key.KeyChar);
+            //        Console.Write("*");
+            //    }
+            //    // Exit if Enter key is pressed.
+            //} while (key.Key != ConsoleKey.Enter);
+            //Console.WriteLine();
+            //return securePwd;
+        }
 
         static void Main(string[] args)
         {
+            bool encrypt = false;
+            bool decrypt = false;
+            string inputfile = "";
+            string outputfile = "";
+
             var result = Parser.Default.ParseArguments<Options>(args);
             result.WithParsed<Options>(o =>
             {
@@ -199,21 +238,25 @@ namespace RoodVersleutelen
                 //}
                 if (o.Encrypt)
                 {
-                    Console.WriteLine("We gaan een bestand encrypten");
+                    encrypt = true;
                 }
                 if (o.Decrypt)
                 {
-                    Console.WriteLine("We gaan een bestand decrypten");
+                    decrypt = true;
                 }
                 if (o.Input.Length > 0)
                 {
-                    Console.WriteLine("Dit bestand gaan we versleutelen {0}", o.Input);
+                    inputfile = o.Input;
                 }
-                if (o.Output.Length > 0)
-                {
-                    Console.WriteLine("Dit bestand gaan we ontsleutelen {0}", o.Output);
-                }
+                //if (o.Output.Length > 0)
+                //{
+                outputfile = o.Output;
+                //}
             });
+            if (encrypt == true)
+                FileEncrypt(inputfile, AskPassword().ToString());
+            if (decrypt == true)
+                FileDecrypt(inputfile, outputfile, AskPassword().ToString());
         }
     }
 }
