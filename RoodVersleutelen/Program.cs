@@ -19,6 +19,10 @@ using System.Diagnostics;
 //string input = "some text";
 //byte[] array = Encoding.ASCII.GetBytes(input);
 
+
+// usage (to encrypt): dotnet RoodVersleutelen.dll -e -i filetoencrypt
+// usage (to decrypt): dotnet RoodVersleutelen.dll -d -i filetodecrypt -o filetodecrypt.plaintext
+
 namespace RoodVersleutelen
 {
     public class Options
